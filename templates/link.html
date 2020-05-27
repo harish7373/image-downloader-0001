@@ -1,0 +1,55 @@
+<html>
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>	
+  <style>
+  	h1,h2{
+  		text-align: center;
+  		font-family:verdana;
+  		font-style: italic;
+  	}
+  	.first{
+  		padding-top:10%;
+  	}
+
+  	input[type='text']{
+  		font-size:20px;
+  		padding:10px 0 5px 5px;
+  	}
+  	input[type="submit"]{
+  		font-size:30px;
+  	}
+
+  	.list{
+  		height:200px;
+  		overflow: auto;
+  	}
+  </style>
+</head>
+<body>
+	<h1>Image Downloader</h1>
+	<h2>A product of <a href="www.nerdnation.tk">nerdnation.tk</a></h2>
+	<div class="row first" align="center">
+		<div class="col-md-12">
+	 <form action="{{ url_for('download') }}" method="POST">
+		<input type="text" name="hello"/>
+  <input type="submit" value="Download">
+</form>
+</div>
+</div>
+<div class="row" align="center">
+<div class="col-md-1"></div>
+<div class="col-md-10 list">
+	{%for list in listi%}
+	<p>{{list}}</p>
+	{%endfor%}
+
+	
+	</div>
+
+</div>
+</body>
+</html> 
