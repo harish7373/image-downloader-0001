@@ -4,7 +4,7 @@ from id import Downloader
 app = Flask(__name__)
 
 
-@app.route('/',  methods=['GET', 'POST'])
+@app.route('/')
 def download():
 	"""
 	listi=list()
@@ -24,11 +24,7 @@ def download():
 				except KeyError:
 					print("")
 		"""
-		listi=["hello","hello2"]
-
-		return render_template("link.html", text="Downladed Succesfully", listi=listi)
-	else:
-   		return render_template("link.html")
+   	return render_template("link.html")
 
 
 
