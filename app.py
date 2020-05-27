@@ -4,9 +4,8 @@ from id import Downloader
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/',  methods=['GET', 'POST'])
 def download():
-	"""
 	listi=list()
 	if request.method == "POST":
 		text = request.form['hello']
@@ -23,8 +22,10 @@ def download():
 					listi.append(image['data-src'])
 				except KeyError:
 					print("")
-		"""
-   	return render_template("link.html")
+
+		return render_template("link.html", text="Downladed Succesfully", listi=listi)
+	else:
+   		return render_template("link.html")
 
 
 
